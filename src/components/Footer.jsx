@@ -1,10 +1,13 @@
 import React from "react"
+import Logo from "../assests/freepik-logo-film-locations-blog.png"
+
 
 const Footer = () =>{
     return(
-        <div>Footer
-            <p>© Copyright Film Locations APP 2024. All rights reserved</p>
-        </div>
+        <footer>
+            <img src={Logo} alt="LOGO" />
+            <span>© Copyright <b>Film Locations APP 2024</b>. All rights reserved</span>
+        </footer>
     )
 }
 

@@ -19,22 +19,93 @@ $daisyGrey:#757575;
 //     padding: 14.5px 15px;
 //     margin: 0;
 
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    // width: 100vw;
+    // // margin: 0 0px; /* TODO REVISAR***********************/
+    // padding: 0;
+    // box-sizing: border-box;
+
+    // font-family: 'Helvetica Neue', "Poppins", "Helvetica", 'Roboto', sans-serif;
+    font-family: 'Helvetica Neue', "Poppins", "Helvetica", 'Roboto', sans-serif;
+    background-color: pink;
+}
+
+
+
+  
 .app{
+    width: 100vw;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+   
 
     .container{
+        // width: 865px;
+         //width: 100vw;
+         background: $daisyYellow;
+        // max-width: 2000px;
+        // // min-height: calc(100vh - var.$nav-height);
+        // margin: 0 auto;
+        
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    
+      
+       
+        
 
+
+        .link{
+            text-decoration: none;
+            color: inherit;
+
+        }
 
         // LOGIN & REGISTER
 
         .auth{
 
+            .container{
+                display: flex;
+                flex-direction: column;
+                justify-content:center;
+                align-items: center;
+                
+            }
+
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content:center;
-            background-color: $daisyYellow;
+            // background-color: $daisyYellow;
             height: 100vh;
+           
+            
+
+            .backImg{
+                width: 100%;
+                height: 50vh;
+                margin-bottom: 50px;
+                
+                img{
+                   width: 100%;
+                   height: 50vh;
+                   object-fit: cover;
+               }
+
+            }
 
             h1{
                 font-size: 25px;
@@ -50,14 +121,13 @@ $daisyGrey:#757575;
             form{
                 display:flex;
                 flex-direction: column;
-                padding: 10px;
+                padding: 0px 10px 10px 0px;
                 width: 350px;
                 gap: 20px;
+                margin-top: 0; 
 
                 input{
                     padding:10px;
-                    // border: none;
-                    // border: 1px solid #000;
                     border: 1px solid $daisyGrey;
                     border-radius: 0;
                     line-height: 1.47;
@@ -92,6 +162,100 @@ $daisyGrey:#757575;
                 
             }
         }
-    }
 
+        // NAVBAR
+
+        .navbar{
+            background: red;
+            
+            .navbar-wrapper{
+                background: greenyellow;
+                
+                .container{
+                    padding: 10px 0px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 200px;
+                    background:$white;
+    
+                    width: 100%;
+                    margin: 0 auto;
+                    padding: 0px 10px;
+                    
+    
+    
+    
+                    .logo{
+                        img{
+                            width: 230px;
+                            // background-color: lightgray
+                        }
+                    }
+                    .links{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        color:$black;
+    
+                        h6{
+                            font-size: 16px;
+                            font-weight: 200px;
+                        }
+                        span{
+                            cursor: pointer;
+                            
+                        }
+
+
+                        .create{
+                            background-color:$daisyYellow ;
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            display:flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-weight: 300px;
+                            border: 1px solid $white;
+
+
+                            &:hover {
+                                color: $daisyGrey;
+                                background-color: white;
+                                border: 1px solid $daisyGrey;
+
+                             }
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+        // FOOTER
+
+        
+        footer {
+                margin-top: 50px;
+                padding: 20px;
+                background-color: $daisyGrey;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 12px;
+                img {
+                  height: 90px;
+                }        
+              
+
+        }
+
+        
+
+
+
+
+    }
 }
