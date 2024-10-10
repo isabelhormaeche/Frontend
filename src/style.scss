@@ -1,0 +1,97 @@
+// VARIABLES
+
+$black: #000000;
+$white: #FFFFFF;
+$lightYellow: #F5F5DC ;
+$daisyYellow: #f8f3e4;
+$daisyGrey:#757575;
+
+// Daisy --> font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// .section-login .section__head h1 {
+//     font-family: "rocky-condensed", serif;
+//     font-size: 32px;
+
+
+// .form-base.form-base.form-base .form__btn {
+//     background: #000;
+//     color: #fff;
+//     letter-spacing: 0.36em;
+//     padding: 14.5px 15px;
+//     margin: 0;
+
+
+.app{
+
+    .container{
+
+
+        // LOGIN & REGISTER
+
+        .auth{
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+            background-color: $daisyYellow;
+            height: 100vh;
+
+            h1{
+                font-size: 25px;
+                color: black;
+                margin-bottom: 20px;
+                font-weight: 400;
+                letter-spacing: .2em;
+                line-height: 1.47;
+                
+              
+            }
+
+            form{
+                display:flex;
+                flex-direction: column;
+                padding: 10px;
+                width: 350px;
+                gap: 20px;
+
+                input{
+                    padding:10px;
+                    // border: none;
+                    // border: 1px solid #000;
+                    border: 1px solid $daisyGrey;
+                    border-radius: 0;
+                    line-height: 1.47;
+
+                    text-decoration: none;
+                    border-bottom: 1px solid gray;
+                    background-color: $daisyYellow;
+                }
+
+                button{
+                    padding: 10px;
+                    border:none;
+                    cursor: pointer;
+                    color:$white;
+                    background-color: $black;
+                    letter-spacing: 0.36em;
+                    line-height: 2.5;
+                    // TODO añadir hover
+                }
+
+                p {
+                    font: 12px;
+                    color: red;
+                    text-align: center;
+                }
+
+                span{
+                    font-size:12px;
+                    text-align: center;
+                }
+
+                
+            }
+        }
+    }
+
+}

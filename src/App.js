@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Post from "./pages/Post";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import "./style.scss";
 
 
 const Layout = () => {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
         element: <Post />,
       },
       {
-        path: "/Create",
+        path: "/create",
         element: <Create />,
       },
     ],
