@@ -5,6 +5,7 @@ $white: #FFFFFF;
 $lightYellow: #F5F5DC ;
 $daisyYellow: #f8f3e4;
 $daisyGrey:#757575;
+$salmonAlert:#e48d8d;
 
 // Daisy --> font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 // .section-login .section__head h1 {
@@ -61,8 +62,8 @@ body {
         // // min-height: calc(100vh - var.$nav-height);
         // margin: 0 auto;
         
-        // width: 100%;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        width: 85%;
+        width: 100%;
+        // width: 85%; **************************************
         margin: 0 auto;
         padding: 0;
     
@@ -253,6 +254,7 @@ body {
         // HOME
 
         .home{
+            padding: 0px 40px; //***************************
 
             .posts{
                 margin-top: 50px;
@@ -323,8 +325,6 @@ body {
                                 color: $daisyGrey;
                                 background-color: $white;
                                 border: 1px solid $daisyGrey;
-
-                               
                             }
                         }
 
@@ -333,6 +333,136 @@ body {
             }
         }
         
+
+        // POST (single blog)
+
+        .post{
+            display: flex;
+            gap: 50px;
+
+            
+
+            .content{
+                flex:5;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                padding: 0px 20px;
+
+                img{
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                }
+
+                .user{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 14px;
+                    
+                    img{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    span{
+                        font-weight: bold;
+                    }
+                }
+
+                .edit{
+                    display: flex;
+                    gap: 5px;
+                }
+
+                // EDIT & DELETE (Pencil and Trash) ICONS 
+                .icon {
+                    font-size: 24px; 
+                    margin: 0 10px; 
+                    cursor: pointer; 
+                  
+                    &.pencil {
+                      color: $daisyGrey; 
+                    }
+                  
+                    &.trash {
+                      color: $salmonAlert; 
+                    }
+                  
+                    &:hover {
+                      opacity: 0.7; 
+                    }
+                  }
+            
+                  
+                
+                h1{
+                    font-size: 42px;
+                    color: #333;
+                }
+
+                p{
+                    text-align: justify;
+                    line-height: 30px;
+                   
+                
+                }
+                
+            }
+            .menu{
+                flex:2;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            h1{
+                font-size: 20px;
+                color:#555;
+            }
+
+            .post{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                
+                img{
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                }
+                
+                h2{
+                    color:#555;
+                }
+
+                button{
+                    width: max-content;
+                    padding: 7.5px 15px;
+                    border: none;
+                    cursor: pointer;
+                    background-color: $white;
+                    border: 1px solid $daisyGrey;
+                    color:$daisyGrey;
+
+                    &:hover{
+                        color: $daisyGrey;
+                        background-color: $daisyYellow;
+                        border: 1px solid $daisyYellow;
+                    }
+                }
+
+
+
+
+
+            }
+
+
+        }
 
 
 
