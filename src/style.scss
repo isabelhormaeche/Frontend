@@ -54,19 +54,18 @@ body {
     .container{
         // width: 865px;
          //width: 100vw;
-         background: $daisyYellow;
-        // max-width: 2000px;
+         
+         background: $white;
+        
+         // max-width: 2000px;
         // // min-height: calc(100vh - var.$nav-height);
         // margin: 0 auto;
         
-        width: 100%;
+        // width: 100%;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        width: 85%;
         margin: 0 auto;
         padding: 0;
     
-      
-       
-        
-
 
         .link{
             text-decoration: none;
@@ -83,6 +82,7 @@ body {
                 flex-direction: column;
                 justify-content:center;
                 align-items: center;
+                background-color: $daisyYellow;
                 
             }
 
@@ -100,9 +100,9 @@ body {
                 margin-bottom: 50px;
                 
                 img{
-                   width: 100%;
-                   height: 50vh;
-                   object-fit: cover;
+                    width: 100%;
+                    height: 50vh;
+                    object-fit: cover;
                }
 
             }
@@ -248,10 +248,90 @@ body {
                 img {
                   height: 90px;
                 }        
-              
-
         }
 
+        // HOME
+
+        .home{
+
+            .posts{
+                margin-top: 50px;
+                display: flex;
+                flex-direction: column;
+                gap: 150px;
+
+                .post{
+                    display: flex;
+                    gap: 100px;
+
+                    // para intercalar mostrar img a la izda o a la derecha(odd number-->2n+1)
+                    &:nth-child(2n+1){
+                        flex-direction: row-reverse;
+                    }
+
+                    .img{
+                        flex:2;
+
+                         position:relative;
+                         z-index: 1; // Asegura que contenedor tenga  z-index mayor
+
+
+                        // Para mostrar texto o fondo de color debajo de imagen
+                        &::after{
+                            content:""; // no text
+                            width: 100%;
+                            height: 100%;
+                            background-color: $daisyYellow;
+
+                            position:absolute;
+                            top: 20px;
+                            left: -20px;
+                            z-index: -1; // llevar detrás de imagen
+                        }
+
+                        img{
+                            width: 100%;
+                            max-height: 400px;
+                            object-fit: cover; // crop properly
+                        }
+                    }
+
+                    .content{
+                        flex: 3;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        h1{
+                            font-size: 48px;
+                        }
+
+                        p{
+                            font-size: 18px;
+                        }
+
+                        button{
+                            width: max-content;
+                            padding: 10px 20px;
+                            border: none;
+                            cursor: pointer;
+                            background-color: $daisyYellow;
+                            border: 1px solid $daisyGrey;
+                            color:$daisyGrey;
+
+                            &:hover{
+                                color: $daisyGrey;
+                                background-color: $white;
+                                border: 1px solid $daisyGrey;
+
+                               
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
         
 
 

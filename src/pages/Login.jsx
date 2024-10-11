@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom";
-import back from "../assests/my-account.jpg";
+import back from "../assests/signup-account.jpg";
 
 
 const Login = () =>{
