@@ -6,6 +6,9 @@ $lightYellow: #F5F5DC ;
 $daisyYellow: #f8f3e4;
 $daisyGrey:#757575;
 $salmonAlert:#e48d8d;
+$lightGray:#d3d3d3;
+$letterbrownGrey:#555;
+$hoverUnderline:#ccccb6;
 
 // Daisy --> font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 // .section-login .section__head h1 {
@@ -68,11 +71,13 @@ body {
         padding: 0;
     
 
-        .link{
-            text-decoration: none;
-            color: inherit;
+         .link{
+             text-decoration:transparent;
+             color: inherit;
 
-        }
+         }
+
+
 
         // LOGIN & REGISTER
 
@@ -179,17 +184,17 @@ body {
                     align-items: center;
                     height: 200px;
                     background:$white;
+                    
     
                     width: 100%;
                     margin: 0 auto;
                     padding: 0px 10px;
                     
     
-    
-    
                     .logo{
                         img{
-                            width: 230px;
+                            width: 100%;
+                            object-fit: cover;
                             // background-color: lightgray
                         }
                     }
@@ -203,31 +208,64 @@ body {
                             font-size: 16px;
                             font-weight: 200px;
                         }
+
                         span{
                             cursor: pointer;
-                            
                         }
+                    
+                            // lo muevo fuera abajo y no tiene underline yellow
+                        // .create{
+                        //     background-color:$daisyYellow ;
+                        //     width: 50px;
+                        //     height: 50px;
+                        //     border-radius: 50%;
+                        //     display:flex;
+                        //     align-items: center;
+                        //     justify-content: center;
+                        //     font-weight: 300px;
+                        //     border: 1px solid $white;
 
 
-                        .create{
-                            background-color:$daisyYellow ;
-                            width: 50px;
-                            height: 50px;
-                            border-radius: 50%;
-                            display:flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-weight: 300px;
-                            border: 1px solid $white;
+                        //     &:hover {
+                        //         color: $daisyGrey;
+                        //         background-color: white;
+                        //         border: 1px solid $daisyGrey;
+                        //         text-decoration: none;
 
+                        //      }
+                        // }
+                    }
+                }
 
-                            &:hover {
-                                color: $daisyGrey;
-                                background-color: white;
-                                border: 1px solid $daisyGrey;
+                // ON HOVER ---> Yellow UNDERLINE NATBAR LINKS
+                .links .link {
+                    text-decoration: none; 
+                    color: inherit; 
+                    border-bottom: 4px solid transparent; // keeps space for the border on future hover
+                
+                    &:hover {
+                        border-bottom-color: $hoverUnderline; // yellow underline
+                        // color: $daisyGrey; 
+                    }
+                }
 
-                             }
-                        }
+                // ON HOVER ---> CIRCLE COLOR changes but without yellow underline link
+                .links .create {
+                    background-color: $daisyYellow;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 300;
+                    border: 1px solid $white;
+                
+                    &:hover {
+                        color: $daisyGrey;
+                        background-color: white;
+                        border: 1px solid $daisyGrey;
+                        text-decoration: none; // no yellow line
                     }
                 }
             }
@@ -462,6 +500,140 @@ body {
             }
 
 
+        }
+
+
+        // CREATE Add post
+
+        .add{
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            padding: 0px 20px; //********
+            align-items: stretch; /* Asegura que los elementos hijos tengan la misma altura */
+            
+            .content{
+                flex:5;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                input{
+                    padding: 10px;
+                    border: 1px solid $lightGray;
+                }
+                
+                .editorContainer{
+                    height: 100%;
+                    overflow: scroll;
+                    border: 1px solid $lightGray;
+
+                    .editor{
+                        height: 100%;
+                        border: none;
+                    }
+                }
+            }
+
+            .menu{
+                flex:2;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+
+                .item{
+                    padding: 10px;
+                    border: 1px solid $lightGray;
+
+                    flex:1; // makes same size (item1 & item2)
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 20px;
+                    font-size: 12px;
+                    color: $letterbrownGrey;
+
+                    h1{
+                        font-size: 20px;
+                    }
+
+                    .file{
+                        text-decoration: underline;
+                        cursor:pointer;
+                    }
+
+                    .buttons{
+                        display: flex;
+                        justify-content: space-between;
+
+
+                        :first-child{ // Save draft btn
+                            cursor: pointer;
+                            color: $daisyGrey;
+                            background-color: white;
+                            border: 1px solid $daisyGrey;
+                            padding: 3px 5px;
+                          }
+                          :last-child{ // Upload btn
+                            cursor: pointer;
+                            color: $letterbrownGrey;
+                            background-color: $daisyYellow;
+                            border: 1px solid $daisyGrey;
+                            padding: 3px 5px;
+                          }
+                    }
+
+                    // .cat{
+                    //     display: flex;
+                    //     align-items: center;
+                    //     gap: 2px;
+                    //     color: $daisyGrey;
+                    // }
+                    
+
+                    .cat {
+                        display: flex;
+                        align-items: center;
+                        gap: 2px;
+                        color: $daisyGrey;
+                    }
+                    
+                    .radio-input:checked + .radio-label::before {
+                        background-color: $daisyGrey; /* Cambia este color al que prefieras */
+                    }
+                    
+                    .radio-input {
+                        display: none; /* Oculta el radio button original */
+                    }
+                    
+                    .radio-label {
+                        position: relative;
+                        padding-left: 25px;
+                        cursor: pointer;
+                    }
+                    
+                    .radio-label::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 10px;
+                        height: 10px;
+                        border: 1px solid $daisyGrey; /* Color del borde del círculo */
+                        border-radius: 50%;
+                        background-color: #fff; /* Color de fondo del círculo */
+                    }
+                    
+                    
+                    
+
+
+
+                }
+                
+            }
         }
 
 

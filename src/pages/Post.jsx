@@ -12,9 +12,9 @@ const Post = () =>{
         // two elements:. content [img + user(img+name+date)] + menu (right side bar)
         <div className="post">
             <div className="content">content
-                <img src="https://images.pexels.com/photos/20537220/pexels-photo-20537220/free-photo-of-mar-puesta-de-sol-playa-arena.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="post image" />
+                <img src="https://images.pexels.com/photos/20537220/pexels-photo-20537220/free-photo-of-mar-puesta-de-sol-playa-arena.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="post" />
                 <div className="user">
-                    <img src="https://images.pexels.com/photos/6272161/pexels-photo-6272161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="user image" />
+                    <img src="https://images.pexels.com/photos/6272161/pexels-photo-6272161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="user" />
                     <div className="info">
                         <span>Isa</span>
                         <p>Posted 3 days ago</p>
