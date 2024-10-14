@@ -3,6 +3,8 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import DOMPurify from "dompurify";
+
 
 const CreateEdit = () => {
   // Reciving the state from Post.jsx:
@@ -34,13 +36,19 @@ const CreateEdit = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("title", title);
-    formData.append("desc", value);
+    
+    // Sanitize and remove <p> tags from the description before send to the server
+    const sanitizedDesc = DOMPurify.sanitize(value);
+    const cleanedDesc = sanitizedDesc.replace(/<\/?p>/g, '');
+    
+    formData.append("desc", cleanedDesc);
     formData.append("cat", cat);
     if (file) {
       formData.append("file", file);
     }
 
-    // // If state -> edit, "put" method and if state none -> create, "post" method
+
+    // If state -> edit, "put" method and if state none -> create, "post" method
     try {
       const url = state ? `http://127.0.0.1:8000/api/update_blog/${state.id}` : "http://127.0.0.1:8000/api/create_blog_with_image";
       const method = state ? "put" : "post";

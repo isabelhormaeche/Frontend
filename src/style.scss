@@ -32,7 +32,15 @@ $hoverUnderline:#ccccb6;
 // }
 // @import url('./fonts/ElzaText-Regular.ttf');
 
-
+/* Tus estilos SCSS aquí */
+* {
+    outline: none;
+  }
+  
+  *:focus {
+    outline: none;
+  }
+  
 
 
 * {
@@ -222,7 +230,7 @@ body {
 
                         .all-link {
                             color: $daisyGrey; // Estilo específico para "ALL"
-                            font-weight: bold; // Ejemplo de otro estilo
+                            font-weight: bold; 
                         }
 
                    

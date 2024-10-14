@@ -2,6 +2,9 @@ import React from "react"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, Link} from "react-router-dom";
+import DOMPurify from "dompurify";
+
+
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -24,30 +27,43 @@ const Home = () => {
     fetchData();
   }, [cat]);
 
+  // Sanitize and remove <p> tags from the description 
+  const removePTags = (htmlString) => {
+    return htmlString.replace(/<\/?p>/g, '');
+}
+
+
+
   return (
     <div className="home">
       <div className="posts">
-        {posts.map((post) => (
-          <div className="post" key={post.id}>
-            <div className="img">
-                {/* <img src={post.image} alt="post image" />     */}
-              <img src={`http://127.0.0.1:8000/${post.image}`} alt="blog" />
-            </div>
-            <div className="content">
-              <Link className="link" to={`/blog/${post.id}`}>
-                <h1>{post.title}</h1>
-              </Link>
-              <p>{post.desc}</p>
-              <Link className="link" to={`/blog/${post.id}`}>
+        {posts.map((post) => {
+          const sanitizedDesc = DOMPurify.sanitize(post.desc);
+          const cleanedDesc = removePTags(sanitizedDesc);
+
+          return (
+            <div className="post" key={post.id}>
+              <div className="img">
+                <img src={`http://127.0.0.1:8000/${post.image}`} alt="blog" />
+              </div>
+              <div className="content">
+                <Link className="link" to={`/blog/${post.id}`}>
+                  <h1>{post.title}</h1>
+                </Link>
+                <p dangerouslySetInnerHTML={{ __html: cleanedDesc }}></p>
+                <Link className="link" to={`/blog/${post.id}`}>
                   <button>Read More</button>
-              </Link>
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
 };
+
+
 
 export default Home;
 
