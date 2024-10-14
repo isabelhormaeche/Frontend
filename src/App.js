@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Create from "./pages/Create";
+import CreateEdit from "./pages/CreateEdit";
 import Home from "./pages/Home";
 import Post from "./pages/Post";
 import Navbar from "./components/Navbar";
@@ -34,12 +34,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/post/:id",
+        path: "/blog/:id",
         element: <Post />,
       },
       {
         path: "/create",
-        element: <Create />,
+        element: <CreateEdit />,
       },
     ],
   },
