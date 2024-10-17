@@ -1,8 +1,8 @@
-import {
+import React, { useState, useEffect } from "react";import {
   createBrowserRouter,
   RouterProvider,
-  Route,
   Outlet,
+  Navigate,
 } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -14,20 +14,45 @@ import Footer from "./components/Footer";
 import "./style.scss";
 
 
-const Layout = () => {
+const Layout = ({ isAuthenticated, logout }) => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
+      <Navbar isAuthenticated={isAuthenticated} logout={logout} />
       <Outlet />
       <Footer />
     </>
   );
 };
 
+const PrivateRoute = ({ element, isAuthenticated, ...rest }) => {
+  return isAuthenticated ? element : <Navigate to="/login" />;
+};
+
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const login = () => {
+    // localStorage.setItem("token", "your-token");
+    setIsAuthenticated(true);
+  };
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    setIsAuthenticated(false);
+  };
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <Layout isAuthenticated={isAuthenticated} logout={logout} />,
     children: [
       {
         path: "/",
@@ -39,7 +64,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/create",
-        element: <CreateEdit />,
+        // element: <CreateEdit />,
+        element: <PrivateRoute element={<CreateEdit />} isAuthenticated={isAuthenticated} />,
       },
     ],
   },
@@ -49,19 +75,32 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Login />,
+    element: <Login login={login} />,
+  },
+  {
+    path: "/logout",
+    element: <Logout logout={logout} />,
   },
 ]);
 
-function App() {
-  return (
-    <div className="app">
-      <div className="container">
-        <RouterProvider router={router} />
-      </div>
+return (
+  <div className="app">
+    <div className="container">
+      <RouterProvider router={router} />
     </div>
-  );
-}
+  </div>
+);
+};
+
+const Logout = ({ logout }) => {
+useEffect(() => {
+  logout();
+}, [logout]);
+
+return <Navigate to="/login" />;
+};
 
 export default App;
+
+
 

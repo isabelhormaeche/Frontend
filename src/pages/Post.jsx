@@ -14,13 +14,12 @@ const Post = () => {
     const navigate = useNavigate();
 
      const { id } = useParams(); // get the postId from Params of  URL
-     console.log(id);
+    //  console.log(id);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const res = await axios.get(`http://127.0.0.1:8000/api/blogs/${id}`);
-                // const res = await axios.get(`http://127.0.0.1:8000/api/blog/6`);
                
                 setPost(res.data);
             } catch (err) {
@@ -31,8 +30,18 @@ const Post = () => {
     }, [id]);
 
     const handleDelete = async ()=>{
+        const token = localStorage.getItem("token");
+        if (!token) {
+        alert("You need to be logged in to delete a post.");
+        navigate("/login");
+        return;
+    }
         try {
-          await axios.delete(`http://127.0.0.1:8000/api/blogs/${id}`);
+            await axios.delete(`http://127.0.0.1:8000/api/blogs/${id}`, {
+            headers: {
+                "Authorization": `Bearer ${token}`,
+            },
+            });
           
           navigate("/")
         } catch (err) {

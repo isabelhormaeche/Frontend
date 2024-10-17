@@ -34,6 +34,15 @@ const CreateEdit = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
+
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("You need to be logged in to create or edit a post.");
+      navigate("/login");
+      return;
+    }
+
+
     const formData = new FormData();
     formData.append("title", title);
     
@@ -47,16 +56,20 @@ const CreateEdit = () => {
       formData.append("image", file); // backend name is "image"
     }
 
-
+    
     // If state -> edit, "put" method and if state none -> create, "post" method
     try {
       const url = state ? `http://127.0.0.1:8000/api/blogs/update_blog/${state.id}` : "http://127.0.0.1:8000/api/blogs/";
       const method = state ? "put" : "post";
+
       await axios({
         method,
         url,
         data: formData,
-        headers: { "Content-Type": "multipart/form-data" },
+        headers: { 
+          "Content-Type": "multipart/form-data",
+          "Authorization": `Bearer ${token}`,
+        },
       });
       navigate("/"); // after blog updated go back home
     } catch (err) {

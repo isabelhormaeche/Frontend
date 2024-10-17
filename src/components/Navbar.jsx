@@ -1,9 +1,17 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import Logo from "../assests/freepik-logo-film-locations-blog.png"
 
-const Natvar = () =>{
+const Navbar = ({ isAuthenticated, logout }) =>{
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate("/login");
+    };
+
+
     return(
         <div className="navbar">
             <div className="navbar-wrapper">
@@ -37,7 +45,11 @@ const Natvar = () =>{
                             <h6>TRANSPORT</h6>
                         </Link>
                         <span>Isa</span>
-                        <span>Logout</span>
+                        {isAuthenticated ? (
+                            <span onClick={handleLogout} style={{ cursor: "pointer" }}>Logout</span>
+                            ) : (
+                            <Link className="link" to="/login">Login</Link>
+                        )}
                         <span className="create">
                             <Link className="link" to="/create">Create</Link>
                         </span>
@@ -48,4 +60,4 @@ const Natvar = () =>{
     )
 }
 
-export default Natvar
+export default Navbar
