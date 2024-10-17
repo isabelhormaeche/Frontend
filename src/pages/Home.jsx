@@ -3,6 +3,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, Link} from "react-router-dom";
 import DOMPurify from "dompurify";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
+import image1 from "../assests/pexels-freestockpro-1172253.jpg";
+import image2 from "../assests/free-photo-of-mar-puesta-de-sol-playa-arena.jpeg";
+import image3 from "../assests/pexels-mark-neal-201020-3830433.jpg";
+import image4 from "../assests/pexelspacofdezsaura1.jpg";
 
 
 
@@ -18,7 +25,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(`http://127.0.0.1:8000/api/blogs/${cat ? `?cat=${cat}` : ''}`);
-        console.log(res.data); // show response data
+        // console.log(res.data); // show response data
         setPosts(res.data);
       } catch (err) {
         console.log(err);
@@ -36,6 +43,20 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Carousel showThumbs={false} autoPlay infiniteLoop>
+        <div>
+          <img src={image1} alt="Image 1" style={{ width: '100%', height: 'auto' }} />
+        </div>
+        <div>
+          <img src={image2} alt="Image 2" style={{ width: '100%', height: 'auto' }} />
+        </div>
+        <div>
+          <img src={image3} alt="Image 3" style={{ width: '100%', height: 'auto' }} />
+        </div>
+        <div>
+          <img src={image4} alt="Image 4" style={{ width: '100%', height: 'auto' }} />
+        </div>
+      </Carousel>
       <div className="posts">
         {posts.map((post) => {
           const sanitizedDesc = DOMPurify.sanitize(post.desc);

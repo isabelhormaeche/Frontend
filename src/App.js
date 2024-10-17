@@ -11,7 +11,10 @@ import Home from "./pages/Home";
 import Post from "./pages/Post";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AboutUs from "./pages/AboutUs";
 import "./style.scss";
+
+
 
 
 const Layout = ({ isAuthenticated, logout }) => {
@@ -57,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <AboutUs />, 
       },
       {
         path: "/blog/:id",

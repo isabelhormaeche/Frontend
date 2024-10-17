@@ -10,29 +10,7 @@ $lightGray:#d3d3d3;
 $letterbrownGrey:#555;
 $hoverUnderline:#ccccb6;
 
-// Daisy --> font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-// .section-login .section__head h1 {
-//     font-family: "rocky-condensed", serif;
-//     font-size: 32px;
 
-
-// .form-base.form-base.form-base .form__btn {
-//     background: #000;
-//     color: #fff;
-//     letter-spacing: 0.36em;
-//     padding: 14.5px 15px;
-//     margin: 0;
-
-// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
-
-// @font-face {
-//     font-family: 'Elza Text';
-//     src: url('./fonts/ElzaText-Regular.ttf') format('truetype');
-// }
-// @import url('./fonts/ElzaText-Regular.ttf');
-
-/* Tus estilos SCSS aquí */
 * {
     outline: none;
   }
@@ -51,16 +29,10 @@ $hoverUnderline:#ccccb6;
 
 
 body {
-    // width: 100vw;
-    // // margin: 0 0px; /* TODO REVISAR***********************/
-    // padding: 0;
-    // box-sizing: border-box;
-
-    // font-family: 'Helvetica Neue', "Poppins", "Helvetica", 'Roboto', sans-serif;
+    
     font-family: 'Helvetica Neue', "Poppins", "Helvetica", 'Roboto', sans-serif;
     background-color: pink;
 }
-
 
 
   
@@ -75,22 +47,11 @@ body {
    
 
     .container{
-        // width: 865px;
-         //width: 100vw;
-         
          background: $white;
-        
-         // max-width: 2000px;
-        // // min-height: calc(100vh - var.$nav-height);
-        // margin: 0 auto;
-        
         width: 100%;
-        // width: 85%; **************************************
         margin: 0 auto;
         padding: 0;
         
-    
-
          .link{
              text-decoration:transparent;
              color: inherit;
@@ -131,6 +92,15 @@ body {
                }
 
             }
+
+            .blog-goBack {
+                text-decoration: none;
+                font-size: 0.8rem;
+                color: #a9a9a9;
+                font-weight: 500;
+                margin-bottom: 2rem;
+                display: block;
+              }
 
             h1{
                 font-size: 25px;
@@ -192,6 +162,14 @@ body {
 
         .navbar{
             background: red;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            // background-color: $daisyGrey;
+            z-index: 1000; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); //elevatation effect
+            padding: 10px 20px;
             
             .navbar-wrapper{
                 background: greenyellow;
@@ -203,6 +181,8 @@ body {
                     align-items: center;
                     height: 200px;
                     background:$white;
+                    // background:$daisyGrey;
+
                     
     
                     width: 100%;
@@ -238,28 +218,8 @@ body {
                         span{
                             cursor: pointer;
                         }
-                    
-                            // lo muevo fuera abajo y no tiene underline yellow
-                        // .create{
-                        //     background-color:$daisyYellow ;
-                        //     width: 50px;
-                        //     height: 50px;
-                        //     border-radius: 50%;
-                        //     display:flex;
-                        //     align-items: center;
-                        //     justify-content: center;
-                        //     font-weight: 300px;
-                        //     border: 1px solid $white;
 
 
-                        //     &:hover {
-                        //         color: $daisyGrey;
-                        //         background-color: white;
-                        //         border: 1px solid $daisyGrey;
-                        //         text-decoration: none;
-
-                        //      }
-                        // }
                     }
                 }
 
@@ -301,27 +261,82 @@ body {
 
         // FOOTER
 
-        
         footer {
-                margin-top: 50px;
-                padding: 20px;
-                background-color: $daisyGrey;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                font-size: 12px;
-                img {
-                  height: 90px;
-                }        
+            margin-top: 50px;
+            padding: 20px;
+            background-color: $daisyGrey;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            flex-wrap: wrap; 
         }
+        
+        footer img {
+            height: 90px;
+        }
+        
+        footer nav {
+            margin: 0 20px;
+            color:$black
+            
+        }
+        
+        footer p {
+            margin: 0;
+        }
+
+        .custom-link {
+            color: black;
+            text-decoration: none;
+        }
+
+        .custom-link:hover {
+            text-decoration: underline;
+        }
+        
+
+        // ABOUT US
+
+        .about {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          }
+          
+          .about h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
+          
+          .about p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+          }
+          
 
         // HOME
 
         .home{
             padding: 0px 40px; //***************************
+            .carousel {
+                margin-top: 20px;
+                margin-bottom: 30px;
+            
+                .slide {
+                  img {
+                    width: 100%;
+                    height: auto;
+                    max-height: 450px; 
+                  }
+                }
+              }
 
             .posts{
-                margin-top: 50px;
+                // margin-top: 50px;
+                margin-top: 30px;
                 display: flex;
                 flex-direction: column;
                 gap: 150px;
