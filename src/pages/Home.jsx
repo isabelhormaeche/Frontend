@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.1:8000/api/blog/${cat ? `?cat=${cat}` : ''}`);
+        const res = await axios.get(`http://127.0.0.1:8000/api/blogs/${cat ? `?cat=${cat}` : ''}`);
         console.log(res.data); // show response data
         setPosts(res.data);
       } catch (err) {
@@ -47,6 +47,7 @@ const Home = () => {
                 <img src={`http://127.0.0.1:8000/${post.image}`} alt="blog" />
               </div>
               <div className="content">
+                {/* <Link className="link" to={`/blog/${post.id}`}> */}
                 <Link className="link" to={`/blog/${post.id}`}>
                   <h1>{post.title}</h1>
                 </Link>

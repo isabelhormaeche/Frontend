@@ -44,13 +44,13 @@ const CreateEdit = () => {
     formData.append("desc", cleanedDesc);
     formData.append("cat", cat);
     if (file) {
-      formData.append("file", file);
+      formData.append("image", file); // backend name is "image"
     }
 
 
     // If state -> edit, "put" method and if state none -> create, "post" method
     try {
-      const url = state ? `http://127.0.0.1:8000/api/update_blog/${state.id}` : "http://127.0.0.1:8000/api/create_blog_with_image";
+      const url = state ? `http://127.0.0.1:8000/api/blogs/update_blog/${state.id}` : "http://127.0.0.1:8000/api/blogs/";
       const method = state ? "put" : "post";
       await axios({
         method,

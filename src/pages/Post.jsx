@@ -19,7 +19,7 @@ const Post = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://127.0.0.1:8000/api/blog/${id}`);
+                const res = await axios.get(`http://127.0.0.1:8000/api/blogs/${id}`);
                 // const res = await axios.get(`http://127.0.0.1:8000/api/blog/6`);
                
                 setPost(res.data);
@@ -32,7 +32,7 @@ const Post = () => {
 
     const handleDelete = async ()=>{
         try {
-          await axios.delete(`http://127.0.0.1:8000/api/blog/${id}`);
+          await axios.delete(`http://127.0.0.1:8000/api/blogs/${id}`);
           
           navigate("/")
         } catch (err) {

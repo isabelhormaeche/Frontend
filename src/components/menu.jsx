@@ -10,7 +10,7 @@ const Menu = ({cat}) =>{
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.1:8000/api/blog/?cat=${cat}`);
+        const res = await axios.get(`http://127.0.0.1:8000/api/blogs/?cat=${cat}`);
         
         console.log(res.data); // show response data
         setPosts(res.data);
