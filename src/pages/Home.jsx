@@ -24,7 +24,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://filmlocationsapi.onrender.com/blogs/${cat ? `?cat=${cat}` : ''}`);
+        const res = await axios.get(`https://filmlocationsapi.onrender.com/api/blogs/${cat ? `?cat=${cat}` : ''}`);
         // console.log(res.data); // show response data
         setPosts(res.data);
       } catch (err) {
