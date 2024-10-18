@@ -12,7 +12,7 @@ const Login = ({ login }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/login", new URLSearchParams({
+      const response = await axios.post("https://filmlocationsapi.onrender.com/api/login", new URLSearchParams({
         username: username,
         password: password,
       }), {

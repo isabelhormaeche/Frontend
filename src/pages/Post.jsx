@@ -19,7 +19,7 @@ const Post = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://127.0.0.1:8000/api/blogs/${id}`);
+                const res = await axios.get(`https://filmlocationsapi.onrender.com/api/blogs/${id}`);
                
                 setPost(res.data);
             } catch (err) {
@@ -37,7 +37,7 @@ const Post = () => {
         return;
     }
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/blogs/${id}`, {
+            await axios.delete(`https://filmlocationsapi.onrender.com/api/blogs/${id}`, {
             headers: {
                 "Authorization": `Bearer ${token}`,
             },
@@ -66,7 +66,7 @@ const Post = () => {
     return (
         <div className="post">
             <div className="content">
-                <img src={`http://127.0.0.1:8000/${post?.image}`} alt="blog" />
+                <img src={`https://filmlocationsapi.onrender.com/${post?.image}`} alt="blog" />
                 <div className="user">
                     <img src={userImage} alt="user" />
                     <div className="info">
