@@ -8,10 +8,11 @@ const Menu = ({cat}) =>{
 
 
   useEffect(() => {
+    console.log(cat); // Verificar el valor de 'cat'
     const fetchData = async () => {
       try {
-        const category = cat || 'default-category'; // Proporciona un valor por defecto
-        const res = await axios.get(`https://filmlocationsapi.onrender.com/api/blogs/?cat=${cat}`);
+        const category = cat || 'city'; // Added default value
+        const res = await axios.get(`https://filmlocationsapi.onrender.com/api/blogs/?cat=${category}`);
         
         console.log(res.data); // show response data
         setPosts(res.data);
