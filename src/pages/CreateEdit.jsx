@@ -59,7 +59,7 @@ const CreateEdit = () => {
     
     // If state -> edit, "put" method and if state none -> create, "post" method
     try {
-      const url = state ? `https://filmlocationsapi.onrender.com/${state.id}` : "https://filmlocationsapi.onrender.com/api/blogs/";
+      const url = state ? `https://filmlocationsapi.onrender.com/api/blogs/update_blog/${state.id}` : "https://filmlocationsapi.onrender.com/api/blogs/";
       const method = state ? "put" : "post";
 
       await axios({
