@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>Getting Started with Create React App</title>
+            <title>Film Locations Blog App</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -138,7 +138,38 @@
         
         </head>
         <body class="vscode-body vscode-light">
-            <h1 id="getting-started-with-create-react-app">Getting Started with Create React App</h1>
+            <h1 id="film-locations-blog-app">Film Locations Blog App</h1>
+<p><strong>Film Locations BLog APP</strong> helps you discover and explore amazing film locations around the Basque Country. Its mission is to provide a comprehensive database of film locations, making it easy for film production companies to work and experience the magic of this land. Registered users can participate and shared interesting filming locations for everybody to discover.</p>
+<p>The project is built using <strong>React as the frontend</strong> framework and <strong>Python with FastAPI as the backend</strong>, and a <strong>SQLite database</strong> is used to store the data.</p>
+<h2 id="what-can-you-do-in-the-website">What can you do in the website?</h2>
+<p>It is a blog page where the registered users can:</p>
+<ul>
+<li><strong>Read</strong> posts.</li>
+<li><strong>Write</strong> posts.</li>
+<li><strong>Edit</strong> posts.</li>
+<li><strong>Delete</strong> posts.</li>
+</ul>
+<p>Users can register and then log in.</p>
+<p>Users don't have to be logged in to read the posts, but they do have to be logged in to write, edit or delete posts.</p>
+<h2 id="how-the-backend-works">How the backend works</h2>
+<p>The backend is built using Python with FastAPI. The backend is hosted on Render, here:<a href="https://filmlocationsapi.onrender.com/docs">Film Locations FastAPI app</a>) and the database is sql language: <a href="https://www.sqlite.org/">SQLite</a>. The backend is connected to the frontend using axios.</p>
+<p>The backend has the following endpoints:</p>
+<h3 id="post">POST</h3>
+<p>*<code>/api/login</code> - <strong>Login</strong></p>
+<p>*<code>/api/blogs/</code> - <strong>Create Blog</strong></p>
+<p>*<code>/api/users/</code> - <strong>Register a new user</strong></p>
+<h3 id="get">GET</h3>
+<p>*<code>/api/blogs/</code> - <strong>Get Blogs</strong></p>
+<p>*<code>/api/blogs/{id}</code> - <strong>Get a single Blog</strong></p>
+<p>*<code>/api/users/{id}</code> - <strong>Get User´s information</strong> (get user´s blogs,etc)</p>
+<h3 id="put">PUT</h3>
+<p>*<code>/api/blogs/update_blog/{blog_id}</code> - <strong>Edit Blog</strong></p>
+<h3 id="delete">DELETE</h3>
+<p>*<code>/api/blogs/{id}</code> - <strong>Delete Blog</strong></p>
+<h2 id="who-can-use-the-backend">Who can use the backend?</h2>
+<p>Anyone can use the backend, but it is meant to be used by the frontend. The backend is not meant to be used by itself, but it can be used by anyone who wants to use it.</p>
+<p>Some of the endpoints are protected, so you need to be logged in to use them. You can register. If you are not logged in, you will get an error message.</p>
+<h1 id="getting-started-with-create-react-app">Getting Started with Create React App</h1>
 <p>This project was bootstrapped with <a href="https://github.com/facebook/create-react-app">Create React App</a>.</p>
 <h2 id="available-scripts">Available Scripts</h2>
 <p>In the project directory, you can run:</p>
