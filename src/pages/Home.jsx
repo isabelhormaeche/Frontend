@@ -45,16 +45,16 @@ const Home = () => {
     <div className="home">
       <Carousel showThumbs={false} autoPlay infiniteLoop>
         <div>
-          <img src={image1} alt="Image 1" style={{ width: '100%', height: 'auto' }} />
+          <img src={image1} alt="Person with his back turned looking at the landscape" style={{ width: '100%', height: 'auto' }} />
         </div>
         <div>
-          <img src={image2} alt="Image 2" style={{ width: '100%', height: 'auto' }} />
+          <img src={image2} alt="Beach waves surfer" style={{ width: '100%', height: 'auto' }} />
         </div>
         <div>
-          <img src={image3} alt="Image 3" style={{ width: '100%', height: 'auto' }} />
+          <img src={image3} alt="Museum building" style={{ width: '100%', height: 'auto' }} />
         </div>
         <div>
-          <img src={image4} alt="Image 4" style={{ width: '100%', height: 'auto' }} />
+          <img src={image4} alt="Iron suspension bridge" style={{ width: '100%', height: 'auto' }} />
         </div>
       </Carousel>
       <div className="posts">
