@@ -1,6 +1,6 @@
 # Film Locations Blog App
 
-[Film Locations FastAPI app](https://wondrous-bunny-d8bf8f.netlify.app/) helps you discover and explore amazing film locations around the Basque Country. Its mission is to provide a comprehensive database of film locations, making it easy for film production companies to work and experience the magic of this land. Registered users can participate and shared interesting filming locations for everybody to discover.
+[Film Locations app](https://wondrous-bunny-d8bf8f.netlify.app/) helps you discover and explore amazing film locations around the Basque Country. Its mission is to provide a comprehensive database of film locations, making it easy for film production companies to work and experience the magic of this land. Registered users can participate and shared interesting filming locations for everybody to discover.
 
 The project is built using **React as the frontend** framework and **Python with FastAPI as the backend**, and a **SQLite database** is used to store the data.
 
@@ -20,7 +20,7 @@ Users don't have to be logged in to read the posts, but they do have to be logge
 
 ## How the backend works
 
-The backend is built using Python with FastAPI. The backend is hosted on Render, here:[Film Locations FastAPI app](https://filmlocationsapi.onrender.com/docs) and the database is sql language: [SQLite](https://www.sqlite.org/). The backend is connected to the frontend using axios. The frontend is hosted on Netlify, here:[Film Locations FastAPI app](https://wondrous-bunny-d8bf8f.netlify.app/).
+The backend is built using Python with FastAPI. The backend is hosted on Render, here:[Film Locations FastAPI app](https://filmlocationsapi.onrender.com/docs) and the database is sql language: [SQLite](https://www.sqlite.org/). The backend is connected to the frontend using axios. The frontend is hosted on Netlify, here:[Film Locations app](https://wondrous-bunny-d8bf8f.netlify.app/).
 
 The backend has the following endpoints:
 
